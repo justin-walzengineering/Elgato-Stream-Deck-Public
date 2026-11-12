@@ -12,9 +12,19 @@
 
 ### Import
 
-1. Double-click the `.streamDeckProfile` file. Stream Deck adds it as a new profile; your existing profiles are not changed.
-2. Import the Eplan shortcuts if you have not already.
-3. Open Eplan and press a button to try it. Test on a copy of a project first.
+**Option A: double-click.** Double-click the `.streamDeckProfile` file. Stream Deck opens and adds it as a new profile.
+
+**Option B: from inside Stream Deck.**
+1. Open the Stream Deck app, click the gear icon (top right), then the **Profiles** tab.
+2. Click the small arrow at the bottom right of the profile list.
+3. Choose **Import...** and pick the `.streamDeckProfile` file.
+4. The new profile appears in the list. Click it, then use the profile drop-down under the device name to switch to it.
+
+Either way, your existing profiles are not changed. Only the profile for the matching device (Stream Deck XL) will load.
+
+Then:
+1. Import the Eplan shortcuts if you have not already.
+2. Open Eplan and press a button to try it. Test on a copy of a project first.
 
 ### Layout (column, row)
 
