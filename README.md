@@ -2,7 +2,9 @@
 
 Put your most-used Eplan Electric P8 commands, scripts and workflows on a physical button. This repo shares ready-to-import Stream Deck profiles, icons, and guides showing what you can trigger from a Stream Deck while you work in Eplan.
 
-> ⚠️ **Unofficial community project.** Not affiliated with, endorsed by, or supported by EPLAN or Elgato. "EPLAN" and "Elgato" / "Stream Deck" are trademarks of their respective owners. Everything here is original work using only publicly available features.
+> ⚠️ **Unofficial community project.** Published by Walz Engineering as an independent community resource. Not affiliated with, endorsed by, or supported by EPLAN or Elgato. "EPLAN" and "Elgato" / "Stream Deck" are trademarks of their respective owners. Everything here is original work using only publicly available features.
+
+![The Eplan Shortcuts profile on a Stream Deck XL](docs/images/streamdeck-eplan-profile.png)
 
 ## Why a Stream Deck?
 
@@ -16,7 +18,8 @@ Eplan is a powerful platform with a command for nearly everything. A Stream Deck
 | [`eplan/`](eplan/) | Eplan shortcut keys file that the buttons rely on |
 | [`scripts/`](scripts/) | Eplan scripts, including a one-click shortcut import |
 | [`icons/`](icons/) | Original button icons |
-| [`tools/`](tools/) | The script that draws the icons |
+| [`tools/`](tools/) | The script that draws the icons, and two small research scripts |
+| [`release.ps1`](release.ps1) | Builds the one-download zip package ([how](docs/releasing.md)) |
 | [`docs/`](docs/) | Setup guides and the catalog of Eplan commands |
 | [`BUTTON-REQUESTS.md`](BUTTON-REQUESTS.md) | Request a new button |
 | [`IDEAS.md`](IDEAS.md) and [`TODO.md`](TODO.md) | What is planned next |
@@ -38,6 +41,10 @@ See [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md) for the growing list.
 - Eplan actions run through scripts
 - Your own scripts loaded in Eplan (see the companion [Eplan Scripting GUI Examples](https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples))
 - Opening files, folders and websites
+
+## Download
+
+A zip with everything in one place (script, shortcuts, profile, icons and an install guide) is planned for each release; see [`docs/releasing.md`](docs/releasing.md).
 
 ## Blog and videos
 
