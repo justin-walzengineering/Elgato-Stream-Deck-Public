@@ -9,7 +9,8 @@
 - [ ] Write a README for each profile listing pages, buttons, and Eplan commands.
 - [x] Create original icons (`tools/make_icons.py`, `icons/`).
 - [x] Export Eplan shortcuts and test the import (`eplan/ShortcutKeys_StreamDeck.xml`).
-- [ ] Build the shortcut import script (see `IDEAS.md`).
+- [x] Probe Eplan's settings actions (`scripts/ProbeSettingsActions.cs`, `ProbeSettingsExportNodes.cs`).
+- [ ] Test `scripts/ImportShortcutKeys.cs` in Eplan (change one shortcut first, run the script, confirm it is restored), then on a colleague's account.
 
 ## Blog and video
 
