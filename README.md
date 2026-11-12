@@ -12,23 +12,30 @@ Eplan is a powerful platform with a command for nearly everything. A Stream Deck
 
 | Folder | Contents |
 |--------|----------|
-| [`profiles/`](profiles/) | Sanitized Stream Deck profile you can import |
+| [`profiles/`](profiles/) | Stream Deck profile you can import (Stream Deck XL, Eplan buttons) |
+| [`eplan/`](eplan/) | Eplan shortcut keys file that the buttons rely on |
+| [`scripts/`](scripts/) | Eplan scripts, including a one-click shortcut import |
 | [`icons/`](icons/) | Original button icons |
-| [`docs/`](docs/) | Setup guides, shortcut ideas, and the catalog of Eplan actions |
-| [`TODO.md`](TODO.md) | What is planned next |
+| [`tools/`](tools/) | The script that draws the icons |
+| [`docs/`](docs/) | Setup guides and the catalog of Eplan commands |
+| [`BUTTON-REQUESTS.md`](BUTTON-REQUESTS.md) | Request a new button |
+| [`IDEAS.md`](IDEAS.md) and [`TODO.md`](TODO.md) | What is planned next |
 
 ## Quick start
 
+Each button sends a keyboard shortcut, so Eplan needs the matching shortcuts first.
+
 1. Install the Stream Deck software from Elgato.
-2. Download a profile from [`profiles/`](profiles/) and double-click it to import.
-3. Read [`docs/getting-started.md`](docs/getting-started.md) to point the buttons at your own Eplan install and scripts.
+2. Import the shortcuts into Eplan: use the [one-click script](scripts/README.md) or the manual steps in [`docs/getting-started.md`](docs/getting-started.md). Back up your own shortcuts first; the import replaces them.
+3. Import the profile from [`profiles/`](profiles/) (double-click it, or Stream Deck > Preferences > Profiles > Import).
+4. Press a button in Eplan. Try it on a copy of a project first.
 
 ## Ways to trigger Eplan from a button
 
 See [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md) for the growing list. Typical approaches:
 
-- Keyboard shortcuts and hotkeys already in Eplan
-- Eplan action names run through scripts
+- Keyboard shortcuts already assigned in Eplan (what the profile uses today)
+- Eplan actions run through scripts
 - Your own scripts loaded in Eplan (see the companion [Eplan Scripting GUI Examples](https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples))
 - Opening files, folders and websites
 
