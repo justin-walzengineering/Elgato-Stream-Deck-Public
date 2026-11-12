@@ -1,0 +1,18 @@
+# Raw Stream Deck backups contain usernames, local paths and project names.
+# Only sanitized profiles in profiles/ may be committed (see docs/sanitizing-checklist.md).
+*.streamDeckProfilesBackup
+*.streamDeckProfile
+!profiles/**/*.streamDeckProfile
+
+# Local-only notes, unpacked backups, scratch
+_local/
+scratch/
+*.log
+
+# Blog lives in a separate PRIVATE repo; never commit it publicly
+blog/
+CLAUDE.local.md
+
+# OS
+Thumbs.db
+.DS_Store
