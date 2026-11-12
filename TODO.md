@@ -18,7 +18,8 @@
 
 ## Blog and video
 
-- [ ] Draft the first blog post (overview: "Eplan on a Stream Deck").
+- [x] Draft the first blog post (private blog repo: `posts/sd01-eplan-on-a-stream-deck.md`, status draft, not committed there yet).
+- [ ] Before the post goes out: publish this repo, add screenshots in Wix, test import on a fresh account.
 - [ ] Plan the first video (screen capture of the deck driving Eplan).
 - [ ] Keep post/video links in [`docs/blog-and-videos.md`](docs/blog-and-videos.md).
 
