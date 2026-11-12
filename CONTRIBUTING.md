@@ -4,7 +4,7 @@ Thanks for helping! Ideas, button requests and profiles are welcome.
 
 ## Ways to contribute
 
-- **Open an issue** describing an Eplan task you would like on a button.
+- **Request a button:** open an issue, or add a row to [`BUTTON-REQUESTS.md`](BUTTON-REQUESTS.md), describing the Eplan task you would like on a button.
 - **Share a profile**: it must be sanitized (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)) and include a README listing every button.
 - **Share icons**: original work or clearly licensed, with the source stated.
 
