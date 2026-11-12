@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings ver="2026.0.3" format="2">
+ <CAT name="USER">
+  <MOD name="SYSTEM">
+   <LEV1 name="GUI">
+    <LEV2 name="Shortcuts">
+     <Setting name="en_US" type="string">
+      <Val>35014;11;78;Ctrl+N</Val>
+      <Val>35016;11;123;Ctrl+F12</Val>
+      <Val>35034;11;90;Ctrl+Z</Val>
+      <Val>35034;19;8;Alt+Backspace</Val>
+      <Val>35035;11;89;Ctrl+Y</Val>
+      <Val>35036;11;68;Ctrl+D</Val>
+      <Val>35036;27;65;Ctrl+Alt+A</Val>
+      <Val>35037;11;86;Ctrl+V</Val>
+      <Val>35038;3;46;Delete</Val>
+      <Val>35039;11;88;Ctrl+X</Val>
+      <Val>35039;7;46;Shift+Delete</Val>
+      <Val>35040;11;67;Ctrl+C</Val>
+      <Val>35042;11;70;Ctrl+F</Val>
+      <Val>35045;19;34;Alt+Page down</Val>
+      <Val>35046;19;33;Alt+Page up</Val>
+      <Val>35056;27;68;Ctrl+Alt+D</Val>
+      <Val>35100;11;80;Ctrl+P</Val>
+      <Val>35101;15;69;Ctrl+Shift+E</Val>
+      <Val>35106;11;73;Ctrl+I</Val>
+      <Val>35107;15;70;Ctrl+Shift+F</Val>
+      <Val>35108;15;86;Ctrl+Shift+V</Val>
+      <Val>35144;3;123;F12</Val>
+      <Val>35146;11;74;Ctrl+J</Val>
+      <Val>35147;25;80;Ctrl+Alt+P</Val>
+      <Val>35148;11;79;Ctrl+O</Val>
+      <Val>35151;25;83;Ctrl+Alt+S</Val>
+      <Val>35152;25;85;Ctrl+Alt+U</Val>
+      <Val>35172;11;121;Ctrl+F10</Val>
+      <Val>35173;11;75;Ctrl+K</Val>
+      <Val>35173;25;69;Ctrl+Alt+E</Val>
+      <Val>35174;11;69;Ctrl+E</Val>
+      <Val>35175;11;188;Ctrl+,</Val>
+      <Val>35183;25;219;Ctrl+Alt+[</Val>
+      <Val>35191;25;67;Ctrl+Alt+C</Val>
+      <Val>35196;11;83;Ctrl+S</Val>
+      <Val>35209;11;76;Ctrl+L</Val>
+      <Val>35214;15;80;Ctrl+Shift+P</Val>
+      <Val>35217;25;220;Ctrl+Alt+\</Val>
+      <Val>35295;27;66;Ctrl+Alt+B</Val>
+      <Val>35323;15;188;Ctrl+Shift+,</Val>
+      <Val>35339;25;86;Ctrl+Alt+V</Val>
+      <Val>35343;25;221;Ctrl+Alt+]</Val>
+      <Val>35365;25;48;Ctrl+Alt+0</Val>
+      <Val>35366;25;54;Ctrl+Alt+6</Val>
+      <Val>35537;19;46;Alt+Delete</Val>
+      <Val>36801;27;84;Ctrl+Alt+T</Val>
+      <Val>36804;27;82;Ctrl+Alt+R</Val>
+      <Val>36805;27;70;Ctrl+Alt+F</Val>
+      <Val>36807;27;49;Ctrl+Alt+1</Val>
+      <Val>36808;27;50;Ctrl+Alt+2</Val>
+      <Val>36809;27;51;Ctrl+Alt+3</Val>
+      <Val>36810;27;52;Ctrl+Alt+4</Val>
+      <Val>36839;11;87;Ctrl+W</Val>
+      <Val>36840;15;82;Ctrl+Shift+R</Val>
+      <Val>36841;3;72;H</Val>
+      <Val>36842;3;74;J</Val>
+      <Val>36843;3;65;A</Val>
+      <Val>37001;11;113;Ctrl+F2</Val>
+      <Val>37002;3;76;L</Val>
+      <Val>37003;3;75;K</Val>
+      <Val>37005;11;71;Ctrl+G</Val>
+      <Val>37008;3;86;V</Val>
+      <Val>37009;3;69;E</Val>
+      <Val>37010;3;82;R</Val>
+      <Val>37011;11;82;Ctrl+R</Val>
+      <Val>37015;3;68;D</Val>
+      <Val>37017;29;65;Ctrl+Shift+Alt+A</Val>
+      <Val>37019;3;71;G</Val>
+      <Val>37020;25;72;Ctrl+Alt+H</Val>
+      <Val>37021;29;72;Ctrl+Shift+Alt+H</Val>
+      <Val>37022;29;74;Ctrl+Shift+Alt+J</Val>
+      <Val>37029;7;116;Shift+F5</Val>
+      <Val>37030;7;117;Shift+F6</Val>
+      <Val>37033;11;122;Ctrl+F11</Val>
+      <Val>37034;7;122;Shift+F11</Val>
+      <Val>37048;11;116;Ctrl+F5</Val>
+      <Val>37048;3;66;B</Val>
+      <Val>37049;3;45;Insert</Val>
+      <Val>37050;11;45;Ctrl+Insert</Val>
+      <Val>37050;3;77;M</Val>
+      <Val>37051;19;45;Alt+Insert</Val>
+      <Val>37056;3;84;T</Val>
+      <Val>37060;3;80;P</Val>
+      <Val>37061;3;83;S</Val>
+      <Val>37072;11;13;Ctrl+Enter</Val>
+      <Val>37072;3;116;F5</Val>
+      <Val>37075;19;51;Alt+3</Val>
+      <Val>37075;19;99;Alt+Num 3</Val>
+      <Val>37076;3;90;Z</Val>
+      <Val>37078;15;117;Ctrl+Shift+F6</Val>
+      <Val>37087;3;73;I</Val>
+      <Val>37088;25;78;Ctrl+Alt+N</Val>
+      <Val>37091;3;34;Page down</Val>
+      <Val>37092;3;33;Page up</Val>
+      <Val>37094;11;65;Ctrl+A</Val>
+      <Val>37095;3;27;Esc</Val>
+      <Val>37102;3;114;F3</Val>
+      <Val>37103;3;115;F4</Val>
+      <Val>37105;3;119;F8</Val>
+      <Val>37106;3;117;F6</Val>
+      <Val>37107;3;118;F7</Val>
+      <Val>37108;3;120;F9</Val>
+      <Val>37109;3;121;F10</Val>
+      <Val>37110;7;119;Shift+F8</Val>
+      <Val>37112;15;85;Ctrl+Shift+U</Val>
+      <Val>37113;7;114;Shift+F3</Val>
+      <Val>37116;7;118;Shift+F7</Val>
+      <Val>37121;7;82;Shift+R</Val>
+      <Val>37122;3;79;O</Val>
+      <Val>37127;15;65;Ctrl+Shift+A</Val>
+      <Val>37127;25;71;Ctrl+Alt+G</Val>
+      <Val>37138;3;70;F</Val>
+      <Val>37144;11;84;Ctrl+T</Val>
+      <Val>37153;7;115;Shift+F4</Val>
+      <Val>37168;11;66;Ctrl+B</Val>
+      <Val>37180;27;76;Ctrl+Alt+L</Val>
+      <Val>37218;29;83;Ctrl+Shift+Alt+S</Val>
+      <Val>37219;29;68;Ctrl+Shift+Alt+D</Val>
+      <Val>37220;29;70;Ctrl+Shift+Alt+F</Val>
+      <Val>37221;29;71;Ctrl+Shift+Alt+G</Val>
+      <Val>37223;11;77;Ctrl+M</Val>
+      <Val>37230;3;85;U</Val>
+      <Val>37259;25;73;Ctrl+Alt+I</Val>
+      <Val>37264;3;81;Q</Val>
+      <Val>37313;27;105;Ctrl+Alt+Num 9</Val>
+      <Val>37313;27;57;Ctrl+Alt+9</Val>
+      <Val>37314;27;103;Ctrl+Alt+Num 7</Val>
+      <Val>37314;27;55;Ctrl+Alt+7</Val>
+      <Val>37315;27;101;Ctrl+Alt+Num 5</Val>
+      <Val>37315;27;53;Ctrl+Alt+5</Val>
+      <Val>37316;27;104;Ctrl+Alt+Num 8</Val>
+      <Val>37316;27;56;Ctrl+Alt+8</Val>
+      <Val>39949;11;220;Ctrl+\</Val>
+      <Val>57665;19;115;Alt+F4</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:1;25;79;Ctrl+Alt+O</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:2;25;186;Ctrl+Alt+;</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:3;25;88;Ctrl+Alt+X</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:4;25;222;Ctrl+Alt+&apos;</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:5;25;191;Ctrl+Alt+/</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:6;25;190;Ctrl+Alt+.</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:7;25;81;Ctrl+Alt+Q</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:8;25;188;Ctrl+Alt+,</Val>
+      <Val>XGedStartInteractionAction /Name:XGedIaFormatText /justification:9;25;90;Ctrl+Alt+Z</Val>
+     </Setting>
+    </LEV2>
+   </LEV1>
+  </MOD>
+ </CAT>
+</Settings>

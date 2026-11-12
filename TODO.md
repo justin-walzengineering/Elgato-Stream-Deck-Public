@@ -2,11 +2,15 @@
 
 ## Next up
 
-- [ ] **Make a fresh Stream Deck backup** of the current setup (Stream Deck app → Preferences → Profiles → Backup / or export profiles) and save it outside the repo.
-- [ ] **Sanitize the backup**: unpack a copy in `_local/`, scan for usernames, paths, machine names, project/customer names (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)), review findings with Justin, then add cleaned profiles to `profiles/`.
+- [x] Make a fresh Stream Deck backup.
+- [ ] **Build the Eplan-only sanitized profile** (backup unpacked in `_local/`; Eplan buttons identified; personal buttons removed)
+- [x] ~~Sanitize the backup~~ (findings reviewed)
+- [ ] (original wording) **Sanitize the backup**: unpack a copy in `_local/`, scan for usernames, paths, machine names, project/customer names (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)), review findings with Justin, then add cleaned profiles to `profiles/`.
 - [ ] **Add more Eplan commands to the Stream Deck**: work through Eplan actions and shortcuts together with Justin, set up buttons on the physical device, and record each in [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md).
 - [ ] Write a README for each profile listing pages, buttons, and Eplan commands.
-- [ ] Create original icons for the buttons in `icons/`.
+- [x] Create original icons (`tools/make_icons.py`, `icons/`).
+- [x] Export Eplan shortcuts and test the import (`eplan/ShortcutKeys_StreamDeck.xml`).
+- [ ] Build the shortcut import script (see `IDEAS.md`).
 
 ## Blog and video
 

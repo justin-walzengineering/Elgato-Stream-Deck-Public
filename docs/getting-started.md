@@ -1,6 +1,6 @@
 # Getting started
 
-> Draft: to be filled in after the first sanitized profile is added.
+> Draft: the Stream Deck profile itself is not published yet. The Eplan shortcut import below has been tested and works.
 
 ## What you need
 
@@ -8,13 +8,29 @@
 - Elgato Stream Deck software for Windows
 - Eplan Electric P8 2026
 
-## Steps
+## How it works
 
-1. Import a profile from [`../profiles/`](../profiles/) by double-clicking it.
-2. Open each button that runs a script or opens a path and replace the placeholder path (for example `C:\EplanScripts\`) with your own.
-3. Load any required scripts into Eplan (each profile README lists them).
-4. Try buttons on a copy of a project first, especially any marked as changing project data.
+Each Stream Deck button sends a keyboard shortcut. For a button to do anything, **Eplan must have that shortcut assigned to the matching command**. So there are two parts: shortcuts in Eplan, then buttons on the deck.
 
-## How a button reaches Eplan
+## Part 1: Import the shortcuts into Eplan
 
-To be documented here: hotkeys, the Open action, multi-actions, and running Eplan scripts.
+1. **Back up your own shortcuts first.** In Eplan open Options > Settings, right-click **User**, choose **Export...**, tick **Shortcut keys** only, and save the file somewhere safe.
+2. Right-click **User** again and choose **Import...**.
+3. Tick **User** and **Shortcut keys** only. Leave the other areas unticked.
+4. For **Source file** pick [`eplan/ShortcutKeys_StreamDeck.xml`](../eplan/ShortcutKeys_StreamDeck.xml) and click **OK**.
+
+> The import **replaces your whole shortcut set** with the one in the file. The backup in step 1 lets you restore yours with the same steps.
+
+Tested: Eplan Electric P8 2026.0.3, on the maintainer's own account. Testing on a fresh account is planned.
+
+## Part 2: Import the Stream Deck profile
+
+Coming soon (see [`../profiles/`](../profiles/)). Then: double-click the profile, and replace any placeholder paths.
+
+## Try it safely
+
+Test buttons on a copy of a project first, especially any marked as changing project data.
+
+## Future
+
+A one-click import script is planned; see [`../IDEAS.md`](../IDEAS.md).
