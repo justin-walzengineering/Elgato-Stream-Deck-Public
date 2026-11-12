@@ -25,11 +25,15 @@ Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck
    ![File > Extras > Interfaces: Run, Load and Unload under Scripts](../docs/images/run-script-menu.png)
 
 3. In the window, pick the shortcut file. Keep **Back up my current shortcuts first** ticked and pick a backup folder.
+
+   ![The Import shortcut keys window](../docs/images/script-window.png)
 4. Click **Import**, then **Yes** to confirm.
 
    ![The confirmation window: Replace your shortcuts?](../docs/images/script-confirm.png)
 
 5. Read the result message. It compares the shortcuts Eplan now has with the file and says whether they match.
+
+   ![The result: Shortcuts imported, 143 shortcuts match the file](../docs/images/script-result.png)
 
 **To undo:** run the script again and choose the backup file it saved (named `ShortcutKeys_Backup_<date>_<time>.xml`).
 
