@@ -48,6 +48,18 @@ Copy-Item (Join-Path $root "icons\*.png") (Join-Path $out "icons\")
 Copy-Item (Join-Path $root "LICENSE") (Join-Path $out "LICENSE.txt")
 Copy-Item (Join-Path $root "CHANGELOG.md") (Join-Path $out "CHANGELOG.md")
 
+# Word guide: built by tools\build_guide.py. It must carry the same version as VERSION.
+$guide = Join-Path $root "release-files\Install_and_User_Guide.docx"
+if (-not (Test-Path $guide)) { throw "release-files\Install_and_User_Guide.docx is missing. Run: python tools/build_guide.py" }
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$gz = [System.IO.Compression.ZipFile]::OpenRead($guide)
+try {
+    $footer = ($gz.Entries | Where-Object { $_.FullName -like "word/footer*.xml" } | ForEach-Object {
+        $sr = New-Object System.IO.StreamReader($_.Open()); try { $sr.ReadToEnd() } finally { $sr.Dispose() } }) -join " "
+} finally { $gz.Dispose() }
+if ($footer -notmatch [regex]::Escape("Version $version")) { throw "Install_and_User_Guide.docx is for another version. Run: python tools/build_guide.py" }
+Copy-Item $guide (Join-Path $out "Install_and_User_Guide.docx")
+
 # Catalog: links to other repository files do not work inside the zip, so keep only the link text.
 $catalog = [System.IO.File]::ReadAllText((Join-Path $root "docs\shortcut-catalog.md"))
 $catalog = [regex]::Replace($catalog, '\[([^\]]+)\]\((?!https?:)[^)]+\)', '$1')
@@ -92,6 +104,18 @@ foreach ($f in Get-ChildItem $out -Recurse -File) {
             foreach ($e in $zip.Entries) {
                 if ($e.Length -eq 0) { continue }
                 $sr = New-Object System.IO.StreamReader($e.Open(), [System.Text.Encoding]::UTF8)
+                try { $blobs += ,@(($f.Name + " :: " + $e.FullName), $sr.ReadToEnd()) } finally { $sr.Dispose() }
+            }
+        } finally { $zip.Dispose() }
+    } elseif ($ext -eq ".docx") {
+        # A Word file is a zip: scan its XML parts as text and its pictures as bytes.
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        $zip = [System.IO.Compression.ZipFile]::OpenRead($f.FullName)
+        try {
+            foreach ($e in $zip.Entries) {
+                if ($e.Length -eq 0) { continue }
+                $enc = if ($e.FullName -like "*.xml" -or $e.FullName -like "*.rels") { [System.Text.Encoding]::UTF8 } else { [System.Text.Encoding]::GetEncoding(28591) }
+                $sr = New-Object System.IO.StreamReader($e.Open(), $enc)
                 try { $blobs += ,@(($f.Name + " :: " + $e.FullName), $sr.ReadToEnd()) } finally { $sr.Dispose() }
             }
         } finally { $zip.Dispose() }

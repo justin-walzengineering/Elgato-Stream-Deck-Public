@@ -24,6 +24,7 @@ What is in the package:
   2_StreamDeck\Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile   The buttons
   icons\                                   The button icons (optional)
   docs\Shortcut-Catalog.md                 Every button and its Eplan command
+  Install_and_User_Guide.docx              The same steps as this file, with screenshots
   INSTALL.txt                              This file
   CHANGELOG.md, LICENSE.txt
 

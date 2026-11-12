@@ -40,7 +40,7 @@ icons/      original button icons (PNG/SVG)
 scripts/    the script users run in Eplan (only that script)
 eplan/      the Eplan shortcut keys file
 tools/      icon generator and research probes (not shipped)
-release-files/  INSTALL.txt template for the zip
+release-files/  INSTALL.txt template and the Word install guide (built by tools/build_guide.py) for the zip
 docs/       guides: getting-started, shortcut-catalog, sanitizing-checklist, blog-and-videos, releasing
 _local/     git-ignored scratch: unpacked backups, raw exports
 ```
