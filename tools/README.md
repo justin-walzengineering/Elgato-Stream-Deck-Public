@@ -11,6 +11,17 @@ python tools/make_icons.py
 
 To rename a button or change its glyph or color, edit the `BUTTONS` list at the top of the script and run it again. Icons are 144 x 144 PNG files named after the button (`grid-a.png`, `to-front.png`, ...).
 
+## build_guide.py
+
+Builds the Word install and user guide for the release zip (`release-files/Install_and_User_Guide.docx`) from the screenshots in `docs/images` and the button tables in `docs/shortcut-catalog.md`.
+
+```bash
+pip install python-docx
+python tools/build_guide.py
+```
+
+Run it again whenever the setup steps, screenshots, catalog or `VERSION` change, then run `release.ps1`.
+
 ## probes/
 
 Two read-only Eplan scripts that were used to find out how Eplan's settings actions work. You do not need them to use the profile; they are kept as examples of exploring the scripting interface before building something. Both ran in Eplan 2026.0.3.
