@@ -1,14 +1,15 @@
 # Scripts
 
-Small Eplan scripts that go with the Stream Deck profile. They are plain `.cs` files that you run from inside Eplan 2026.
+This folder holds the one script you run in Eplan.
 
 New to running scripts? See [How to run a script](https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples/blob/main/docs/running-scripts.md) in the companion Eplan Scripting GUI Examples repo.
 
-## Import shortcut keys (the one most people want)
+## Import shortcut keys
 
 | | |
 |---|---|
 | **File** | [`ImportShortcutKeys.cs`](ImportShortcutKeys.cs) |
+| **Version** | 1.0.0 |
 | **Level** | Intermediate |
 | **Status** | Works. Run in Eplan 2026.0.3 on the maintainer's account and on a fresh account. |
 
@@ -25,6 +26,9 @@ Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck
 
 3. In the window, pick the shortcut file. Keep **Back up my current shortcuts first** ticked and pick a backup folder.
 4. Click **Import**, then **Yes** to confirm.
+
+   ![The confirmation window: Replace your shortcuts?](../docs/images/script-confirm.png)
+
 5. Read the result message. It compares the shortcuts Eplan now has with the file and says whether they match.
 
 **To undo:** run the script again and choose the backup file it saved (named `ShortcutKeys_Backup_<date>_<time>.xml`).
@@ -36,19 +40,10 @@ Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck
 - Checking the result afterwards instead of trusting it
 - A small window that follows Eplan's light or dark theme, centered on Eplan
 
-## Probe scripts
-
-Read-only helpers used to find out how Eplan's settings actions work. Most readers do not need them. They are kept as examples of how to explore the scripting interface before building something.
-
-| Script | What it does |
-|--------|--------------|
-| [`ProbeSettingsActions.cs`](ProbeSettingsActions.cs) | Lists the parameters of the `XSettingsExport` and `XSettingsImport` actions in a window you can copy from. Found: export takes `node`, `XMLFile`, `prj`; import takes `XmlFile`, `src`, `Project`, `Node`. |
-| [`ProbeSettingsExportNodes.cs`](ProbeSettingsExportNodes.cs) | Exports four settings nodes to your temp folder and reports which one holds the keyboard shortcuts. Found: `USER.SYSTEM.GUI.Shortcuts`. It never imports anything. |
-
-Both ran in Eplan 2026.0.3.
-
 ## Notes
 
-- Eplan 2026 compiles scripts with C# 5, so there is no string interpolation, `?.`, or `out var` in these files.
-- Try scripts on a throwaway setup first, and keep the backup the import script offers.
-- All scripts are MIT licensed and written from scratch for this repo.
+- Eplan 2026 compiles scripts with C# 5, so there is no string interpolation, `?.`, or `out var` in the file.
+- Try scripts on a throwaway setup first, and keep the backup the script offers.
+- The two small research scripts used to find the right settings node are in [`../tools/probes/`](../tools/probes/). You do not need them.
+- Want everything in one download? See the zip package described in [`../docs/releasing.md`](../docs/releasing.md).
+- MIT licensed and written from scratch for this repo.

@@ -1,0 +1,51 @@
+# Releasing
+
+How the download package (zip) is made. The repository holds the working files. `release.ps1` copies only what a user needs into a clean package and zips it, like a "release" copy next to the working ("debug") files.
+
+| | Working files | Release package |
+|---|---|---|
+| Where | the repository folders (`scripts/`, `eplan/`, `profiles/`, `icons/`, `docs/`) | `Releases\EplanStreamDeck_v<version>_<date>\` and `.zip` (git-ignored) |
+| Contains | history, notes, tools, probes, drafts | the script, shortcut file, profile, icons, shortcut catalog, `INSTALL.txt`, license, changelog |
+
+## What the zip contains
+
+```
+EplanStreamDeck_v1.0.0_<date>/
+  INSTALL.txt                 setup and install guide (plain text)
+  CHANGELOG.md
+  LICENSE.txt
+  1_Eplan/
+    ImportShortcutKeys.cs
+    ShortcutKeys_StreamDeck.xml
+  2_StreamDeck/
+    Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile
+  icons/                      the button icons
+  docs/Shortcut-Catalog.md
+```
+
+The install guide source is [`release-files/INSTALL.txt`](../release-files/INSTALL.txt). `{VERSION}` and `{DATE}` in it are filled in by the script.
+
+## Making a release (maintainer)
+
+1. Update the version in three places and keep them equal: `VERSION`, the `Version` line in the header of `scripts/ImportShortcutKeys.cs`, and its `Version` constant. Add the changes to the script's ChangeLog block and to `CHANGELOG.md` (a `## <version>` section is required).
+2. Update `release-files/INSTALL.txt` if the setup steps changed. Rebuild the profile and icons first if buttons changed (both profiles, public and private, change together).
+3. Run from the repository root:
+
+   ```bash
+   powershell -NoProfile -ExecutionPolicy Bypass -File release.ps1
+   ```
+
+   Optional: `-Date 2026-12-01`, or `-OutRoot <folder>` for a test build outside the repository.
+4. The script checks that the versions match, builds the folder, runs the **scrub check**, and zips it. If the scrub check finds anything it stops and zips nothing.
+5. Unzip the result on a clean PC and follow `INSTALL.txt` once before publishing.
+6. Publishing (for example attaching the zip to a GitHub release) only happens when the maintainer says so.
+
+## The scrub check
+
+`release.ps1` searches every text file, every file inside the Stream Deck profile, and the PNG data for things that must never be published: Windows user paths (`C:\Users\<name>`), network share paths, OneDrive paths and e-mail addresses (these generic patterns are in the script). It also reads a personal list from `_local\scrub-patterns.txt` (one regular expression per line): your user name, company and customer names, device serial numbers, and the names of personal buttons. That file is git-ignored, so those names never reach the public repository. If it is missing, the script warns that personal names were not checked. The check also fails if a working folder (`_local`, `tools`, `.git`, `blog`) ends up in the package. Add a line to `_local\scrub-patterns.txt` whenever something new should be blocked.
+
+The scrub check is a safety net, not a replacement for [`sanitizing-checklist.md`](sanitizing-checklist.md): look at new screenshots yourself before adding them.
+
+## Public and private profile
+
+Only the public profile (`profiles/`) goes into the package. The private profile with the personal buttons stays in the git-ignored `_local/private/` folder.

@@ -19,6 +19,10 @@ A free, public collection of **original** Elgato Stream Deck profiles, icons and
 9. **Never `git push`, create remotes, or publish** without Justin's explicit OK in that conversation.
 10. **Blog is separate.** The `blog/` folder is a separate PRIVATE repo and is git-ignored. Never commit it here.
 
+## Releases
+
+The repository holds the working files. `release.ps1` builds the download zip into `Releases\` (git-ignored) with a scrub check; see `docs/releasing.md`. Only build or publish a release when Justin says he is ready, keep `VERSION`, the script header and the script's `Version` constant equal, and never upload the zip (for example as a GitHub release) without his explicit OK. Anything released follows the public-release scrub: no personal, employer or customer data, and screenshots must show only the dialog or window being demonstrated.
+
 ## Profiles: public and private stay in step
 
 There are two profile files built from the same buttons: the public one in `profiles/` (Eplan buttons only) and a private one in `_local/private/` (same Eplan buttons plus personal ones such as Spotify, audio switch, applause). **Every edit to the Eplan buttons or pages applies to both.** Personal buttons go in the private profile only. Page 2 is a macro-project-editing page (planned); it is added to both. The build helper lives in `_local/build_profiles.py` (git-ignored).
@@ -33,7 +37,11 @@ There are two profile files built from the same buttons: the public one in `prof
 ```
 profiles/   sanitized, importable profiles (+ a README per profile: pages, buttons, what each does)
 icons/      original button icons (PNG/SVG)
-docs/       guides: getting-started, shortcut-catalog, sanitizing-checklist, blog-and-videos
+scripts/    the script users run in Eplan (only that script)
+eplan/      the Eplan shortcut keys file
+tools/      icon generator and research probes (not shipped)
+release-files/  INSTALL.txt template for the zip
+docs/       guides: getting-started, shortcut-catalog, sanitizing-checklist, blog-and-videos, releasing
 _local/     git-ignored scratch: unpacked backups, raw exports
 ```
 

@@ -1,0 +1,98 @@
+Eplan Shortcuts for the Elgato Stream Deck
+Version {VERSION}   Released {DATE}
+Walz Engineering
+
+Unofficial community project. Not affiliated with, endorsed by, or supported by
+EPLAN or Elgato. "EPLAN", "Elgato" and "Stream Deck" are trademarks of their
+owners. Everything here is original work and is released under the MIT license
+(see LICENSE.txt).
+
+------------------------------------------------------------------------------
+WHAT YOU GET
+------------------------------------------------------------------------------
+This package puts 28 everyday Eplan Electric P8 commands on a Stream Deck XL.
+Each Stream Deck button sends a keyboard shortcut. Eplan must have the matching
+shortcut for the button to do anything, so setup has two parts:
+
+  Part 1  Put the shortcuts into Eplan    (folder 1_Eplan)
+  Part 2  Put the buttons on the Stream Deck    (folder 2_StreamDeck)
+
+What is in the package:
+
+  1_Eplan\ImportShortcutKeys.cs            Script that imports the shortcuts
+  1_Eplan\ShortcutKeys_StreamDeck.xml      The shortcut keys the buttons use
+  2_StreamDeck\Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile   The buttons
+  icons\                                   The button icons (optional)
+  docs\Shortcut-Catalog.md                 Every button and its Eplan command
+  INSTALL.txt                              This file
+  CHANGELOG.md, LICENSE.txt
+
+You need: Eplan Electric P8 2026, a Stream Deck XL (32 keys), and the Elgato
+Stream Deck software for Windows. The profile uses only the built-in Hotkey and
+Multi Action functions, so there are no plugins to install.
+
+------------------------------------------------------------------------------
+BEFORE YOU START
+------------------------------------------------------------------------------
+Part 1 REPLACES your Eplan user keyboard shortcuts with the set in the file.
+The script offers to back up your current shortcuts first. Leave that option on.
+Try everything on a copy of a project first.
+
+------------------------------------------------------------------------------
+PART 1: SHORTCUTS IN EPLAN (use the script)
+------------------------------------------------------------------------------
+1. Copy the whole folder "1_Eplan" to your computer, for example to
+   C:\EplanScripts\ . Keep the two files together.
+2. In Eplan open File > Extras > Interfaces. Under "Scripts" click Run.
+3. Select ImportShortcutKeys.cs and click Open.
+4. In the window:
+     - Shortcut file: click Browse and choose ShortcutKeys_StreamDeck.xml
+       (the window fills this in if the file is in Documents, Downloads or
+       the Desktop).
+     - Keep "Back up my current shortcuts first" ticked and choose a folder.
+5. Click Import, then Yes.
+6. The result message says whether Eplan now has the shortcuts from the file.
+   If a shortcut does not respond, restart Eplan.
+
+To undo: run the script again and choose the backup file it saved
+(ShortcutKeys_Backup_<date>_<time>.xml).
+
+Prefer doing it by hand? In Eplan open the Settings dialog, right-click "User",
+choose Import..., tick only "Shortcut keys", pick ShortcutKeys_StreamDeck.xml
+and click OK. Export your own shortcuts the same way first as a backup.
+
+------------------------------------------------------------------------------
+PART 2: BUTTONS ON THE STREAM DECK
+------------------------------------------------------------------------------
+1. Install the Stream Deck software from Elgato and connect your Stream Deck XL.
+2. Double-click 2_StreamDeck\Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile.
+   Or, in the Stream Deck app: click the gear icon > Profiles tab > the small
+   arrow below the profile list > Import..., then pick the file.
+3. A new profile named "Eplan Shortcuts (XL)" appears. Your other profiles are
+   not changed. Choose it with the profile drop-down under the device name.
+4. The first column is empty so you can add your own buttons.
+
+------------------------------------------------------------------------------
+TRY IT
+------------------------------------------------------------------------------
+Open an Eplan project (a copy) and press a button, for example one of the Grid
+buttons or the nine text-position buttons. docs\Shortcut-Catalog.md lists what
+each button does.
+
+------------------------------------------------------------------------------
+IF SOMETHING DOES NOT WORK
+------------------------------------------------------------------------------
+- Button does nothing: the Eplan window must be in front, and Part 1 must be
+  done. Restart Eplan after the import if needed.
+- A different command runs: another command in your Eplan already uses that
+  shortcut. Restore your backup with the script, or change the shortcut in
+  Eplan.
+- The script does not start: Eplan 2026 is required. Check the file was not
+  blocked by Windows (right-click the file > Properties > Unblock).
+- The profile does not import: check the Stream Deck software is up to date and
+  that the device is a Stream Deck XL.
+
+------------------------------------------------------------------------------
+Maintained by Justin Walz, Walz Engineering. Questions and ideas are welcome,
+and if you would like help with a script of your own, feel free to get in touch.
+Project page: https://github.com/justin-walzengineering/Elgato-Stream-Deck-Public

@@ -11,10 +11,15 @@
 - [ ] Write a README for each profile listing pages, buttons, and Eplan commands.
 - [x] Create original icons (`tools/make_icons.py`, `icons/`).
 - [x] Export Eplan shortcuts and test the import (`eplan/ShortcutKeys_StreamDeck.xml`).
-- [x] Probe Eplan's settings actions (`scripts/ProbeSettingsActions.cs`, `ProbeSettingsExportNodes.cs`).
+- [x] Probe Eplan's settings actions (now in `tools/probes/`).
 - [x] Test `scripts/ImportShortcutKeys.cs` in Eplan on the maintainer's account (works).
 - [x] Test the import script and shortcut file on a fresh account (worked).
 - [ ] Add the import script to the docs (getting-started, screenshots) and a README for `scripts/`.
+
+## Release package
+
+- [x] `release.ps1`, install guide template, scrub check, `docs/releasing.md` (test build ok).
+- [ ] When ready: run `release.ps1`, test the zip on a clean PC, then (with Justin's OK) attach it to a GitHub release.
 
 ## Blog and video
 

@@ -3,8 +3,9 @@
 // Purpose   : Import a shortcut-keys XML file into Eplan with one click, after an optional backup of your current shortcuts.
 // You learn : Running Eplan's settings export/import actions, a themed window, backing up before a risky change, checking the result afterwards
 // Level     : Intermediate
+// Version   : 1.0.0
 // Tested in : Eplan Electric P8 2026.0.3 (maintainer's account and a fresh account)
-// Author    : Justin Walz
+// Author    : Justin Walz, Walz Engineering
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
 //
@@ -12,6 +13,13 @@
 // It REPLACES your whole shortcut set with the one in the file, so it offers
 // to save your current shortcuts first. To undo, run this script again and
 // choose the backup file it made.
+//
+// ChangeLog:
+//--------------------------------------------------------------------------------------
+// 2026-11-12   V1.0.0   First release.
+//                       - Imports a shortcut-keys XML file after an optional backup.
+//                       - Checks the result by exporting again and comparing.
+//--------------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
@@ -30,7 +38,10 @@ using Eplan.EplApi.Scripting;          // The [Start] attribute
 // ---------------------------------------------------------------
 public class ImportShortcutKeys
 {
-    // The settings node that holds the keyboard shortcuts (found with ProbeSettingsExportNodes.cs).
+    // Script version. Keep it the same as the Version line in the header above.
+    public const string Version = "1.0.0";
+
+    // The settings node that holds the keyboard shortcuts.
     private const string ShortcutNode = "USER.SYSTEM.GUI.Shortcuts";
     private const string Title = "Import shortcut keys";
 
@@ -424,7 +435,7 @@ public class SkiImportWindow : Form
 
     public SkiImportWindow()
     {
-        Text = "Import shortcut keys";
+        Text = "Import shortcut keys  v" + ImportShortcutKeys.Version;
         ClientSize = new Size(540, 300);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MinimizeBox = false;
