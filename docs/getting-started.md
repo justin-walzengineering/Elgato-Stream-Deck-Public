@@ -1,6 +1,6 @@
 # Getting started
 
-> Draft: the Stream Deck profile itself is not published yet. The Eplan shortcut import below has been tested and works.
+> The Eplan shortcut import has been tested and works. The Stream Deck profile is built from the maintainer's setup; import on a fresh install is still to be tested.
 
 ## What you need
 
@@ -29,7 +29,7 @@ Tested: Eplan Electric P8 2026.0.3, on the maintainer's own account. Testing on 
 
 ## Part 2: Import the Stream Deck profile
 
-Coming soon (see [`../profiles/`](../profiles/)). Then: double-click the profile, and replace any placeholder paths.
+Double-click [`profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile`](../profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile). Stream Deck adds it as a new profile. See [`profiles/README.md`](../profiles/README.md) for the layout. No paths need editing: the buttons only send keyboard shortcuts.
 
 ## Try it safely
 

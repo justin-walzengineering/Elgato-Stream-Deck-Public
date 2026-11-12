@@ -12,7 +12,7 @@ Eplan is a powerful platform with a command for nearly everything. A Stream Deck
 
 | Folder | Contents |
 |--------|----------|
-| [`profiles/`](profiles/) | Sanitized Stream Deck profiles you can import (coming soon) |
+| [`profiles/`](profiles/) | Sanitized Stream Deck profile you can import |
 | [`icons/`](icons/) | Original button icons |
 | [`docs/`](docs/) | Setup guides, shortcut ideas, and the catalog of Eplan actions |
 | [`TODO.md`](TODO.md) | What is planned next |

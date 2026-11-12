@@ -3,7 +3,8 @@
 ## Next up
 
 - [x] Make a fresh Stream Deck backup.
-- [ ] **Build the Eplan-only sanitized profile** (backup unpacked in `_local/`; Eplan buttons identified; personal buttons removed)
+- [x] Build the Eplan-only sanitized public profile (`profiles/`) and a private profile with personal buttons (`_local/private/`, git-ignored).
+- [ ] Import the public profile on a fresh Stream Deck setup / colleague's PC and confirm it loads.
 - [x] Review the backup for private data (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)).
 - [ ] **Add more Eplan commands to the Stream Deck**: work through Eplan actions and shortcuts together with Justin, set up buttons on the physical device, and record each in [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md).
 - [ ] Write a README for each profile listing pages, buttons, and Eplan commands.
