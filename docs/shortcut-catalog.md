@@ -6,32 +6,32 @@ Status: **Draft** = not yet individually checked; **Spot-checked** = used and wo
 
 Shortcut import file: tested on the maintainer's own account (Verified). The maintainer spot-checked the buttons after the import and they worked.
 
-Eplan stores each shortcut as `command id ; modifier ; key code ; text`. The command ids below come from the exported shortcut file.
+Action names come from matching the command ids in the exported shortcut file to the installed Eplan command table.
 
 ## Graphical editing
 
 | Button | Shortcut | Eplan command | Status |
 |--------|----------|---------------|--------|
-| Grid A | Ctrl+Shift+Alt+S | id 37218 | Draft |
-| Grid B | Ctrl+Shift+Alt+D | id 37219 | Draft |
-| Grid C | Ctrl+Shift+Alt+F | id 37220 | Draft |
-| Grid D | Ctrl+Shift+Alt+G | id 37221 | Draft |
-| Align to Grid | Ctrl+Shift+Alt+A | id 37017 | Draft |
-| To Front | Ctrl+Shift+Alt+H | id 37021 | Draft |
-| To Back | Ctrl+Shift+Alt+J | id 37022 | Draft |
-| Copy Format | Ctrl+Alt+6 | id 35366 | Draft |
-| Paste Format | Ctrl+Alt+0 | id 35365 | Draft |
+| Grid A | Ctrl+Shift+Alt+S | XGedSetGridsizeAction /id:1 | Draft |
+| Grid B | Ctrl+Shift+Alt+D | XGedSetGridsizeAction /id:2 | Draft |
+| Grid C | Ctrl+Shift+Alt+F | XGedSetGridsizeAction /id:3 | Draft |
+| Grid D | Ctrl+Shift+Alt+G | XGedSetGridsizeAction /id:4 | Draft |
+| Align to Grid | Ctrl+Shift+Alt+A | XGedIaArrangeOnGrid | Draft |
+| To Front | Ctrl+Shift+Alt+H | XGedIaToForeground | Draft |
+| To Back | Ctrl+Shift+Alt+J | XGedIaToBackground | Draft |
+| Copy Format | Ctrl+Alt+6 | XGedCopyGraphicalFormatAction (format painter) | Draft |
+| Paste Format | Ctrl+Alt+0 | XGedAcceptGraphicalFormatAction (format painter) | Draft |
 
 ## Forms, symbols and libraries
 
 | Button | Shortcut | Eplan command | Status |
 |--------|----------|---------------|--------|
-| Open Form | Ctrl+Alt+\ | id 35217 | Draft |
-| Close Form | Ctrl+Alt+] | id 35343 | Draft |
-| Open Library | Ctrl+Alt+S | id 35151 | Draft |
-| Close Library | Ctrl+Alt+U | id 35152 | Draft |
-| Open Symbol | Ctrl+Alt+P | id 35147 | Draft |
-| Close Symbol | Ctrl+Alt+V | id 35339 | Draft |
+| Open Form | Ctrl+Alt+\ | XFOEActionFormOpen | Draft |
+| Close Form | Ctrl+Alt+] | XFOEActionFormClose | Draft |
+| Open Library | Ctrl+Alt+S | XSymLibOpenAction | Draft |
+| Close Library | Ctrl+Alt+U | XSymLibCloseAction | Draft |
+| Open Symbol | Ctrl+Alt+P | XSymbolOpenAction | Draft |
+| Close Symbol | Ctrl+Alt+V | XSymbolCloseAction | Draft |
 
 ## Text alignment (nine anchor positions)
 
@@ -55,10 +55,10 @@ All nine use `XGedStartInteractionAction /Name:XGedIaFormatText /justification:N
 
 | Button | Shortcut | Eplan command | Status |
 |--------|----------|---------------|--------|
-| Update Reports | Ctrl+, | id 35175 | Draft |
-| Update Connections | Ctrl+Alt+[ | id 35183 | Draft |
+| Update Reports | Ctrl+, | XFgUpdateEvaluationAction | Draft |
+| Update Connections | Ctrl+Alt+[ | EsGenerateConnections | Draft |
 | Switch Tabs | Ctrl+F6 | Windows-style window switch | Draft |
-| Design | Ctrl+Alt+L then Ctrl+Alt+N (multi action) | ids 37180, 37088 | Draft |
+| Design | Ctrl+Alt+L then Ctrl+Alt+N (multi action) | XGedActionToggleConstructionMode, XGedToggleObjectSnapAction | Draft |
 
 ## Ideas queue (shortcuts already assigned in Eplan, not yet on the deck)
 
