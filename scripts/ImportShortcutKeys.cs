@@ -3,7 +3,7 @@
 // Purpose   : Import a shortcut-keys XML file into Eplan with one click, after an optional backup of your current shortcuts.
 // You learn : Running Eplan's settings export/import actions, a themed window, backing up before a risky change, checking the result afterwards
 // Level     : Intermediate
-// Tested in : Eplan Electric P8 2026.0.3 (maintainer's account; fresh-account test pending)
+// Tested in : Eplan Electric P8 2026.0.3 (maintainer's account and a fresh account)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
