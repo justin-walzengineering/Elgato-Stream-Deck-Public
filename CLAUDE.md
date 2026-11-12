@@ -19,6 +19,10 @@ A free, public collection of **original** Elgato Stream Deck profiles, icons and
 9. **Never `git push`, create remotes, or publish** without Justin's explicit OK in that conversation.
 10. **Blog is separate.** The `blog/` folder is a separate PRIVATE repo and is git-ignored. Never commit it here.
 
+## Profiles: public and private stay in step
+
+There are two profile files built from the same buttons: the public one in `profiles/` (Eplan buttons only) and a private one in `_local/private/` (same Eplan buttons plus personal ones such as Spotify, audio switch, applause). **Every edit to the Eplan buttons or pages applies to both.** Personal buttons go in the private profile only. Page 2 is a macro-project-editing page (planned); it is added to both. The build helper lives in `_local/build_profiles.py` (git-ignored).
+
 ## Target
 
 - Eplan Electric P8 2026 (installed at `C:\Program Files\EPLAN\Platform\2026.0.3\Bin`). Anything documented must be verified on that version; other versions are not mentioned.
