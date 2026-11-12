@@ -10,7 +10,7 @@ New to running scripts? See [How to run a script](https://github.com/justin-walz
 |---|---|
 | **File** | [`ImportShortcutKeys.cs`](ImportShortcutKeys.cs) |
 | **Level** | Intermediate |
-| **Status** | Works. Run in Eplan 2026.0.3 on the maintainer's account. A fresh-account test is still to do. |
+| **Status** | Works. Run in Eplan 2026.0.3 on the maintainer's account and on a fresh account. |
 
 Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck.xml`](../eplan/ShortcutKeys_StreamDeck.xml)) into Eplan in one click, so the Stream Deck buttons have the shortcuts they send.
 
@@ -20,6 +20,9 @@ Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck
 
 1. Copy `ImportShortcutKeys.cs` to a folder on your computer, for example `C:\EplanScripts\`.
 2. In Eplan: File > Extras > Interfaces, then **Run** (under Scripts), and choose the file.
+
+   ![File > Extras > Interfaces: Run, Load and Unload under Scripts](../docs/images/run-script-menu.png)
+
 3. In the window, pick the shortcut file. Keep **Back up my current shortcuts first** ticked and pick a backup folder.
 4. Click **Import**, then **Yes** to confirm.
 5. Read the result message. It compares the shortcuts Eplan now has with the file and says whether they match.

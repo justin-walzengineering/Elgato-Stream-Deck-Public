@@ -4,7 +4,7 @@
 
 - [x] Make a fresh Stream Deck backup.
 - [x] Build the Eplan-only sanitized public profile (`profiles/`) and a private profile with personal buttons (`_local/private/`, git-ignored).
-- [ ] Import the public profile on a fresh Stream Deck setup / colleague's PC and confirm it loads.
+- [x] Import the public profile on a fresh account (worked).
 - [x] Review the backup for private data (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)).
 - [ ] **Page 2: macro-project editing page** (requests go in `BUTTON-REQUESTS.md`) (generate macros, etc.) for both profiles; replaces the copy of page 1, keeps only the previous-page button.
 - [ ] **Add more Eplan commands to the Stream Deck**: work through Eplan actions and shortcuts together with Justin, set up buttons on the physical device, and record each in [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md).
@@ -13,13 +13,14 @@
 - [x] Export Eplan shortcuts and test the import (`eplan/ShortcutKeys_StreamDeck.xml`).
 - [x] Probe Eplan's settings actions (`scripts/ProbeSettingsActions.cs`, `ProbeSettingsExportNodes.cs`).
 - [x] Test `scripts/ImportShortcutKeys.cs` in Eplan on the maintainer's account (works).
-- [ ] Test the import script and shortcut file on a colleague's account.
+- [x] Test the import script and shortcut file on a fresh account (worked).
 - [ ] Add the import script to the docs (getting-started, screenshots) and a README for `scripts/`.
 
 ## Blog and video
 
 - [x] Draft the first blog post (private blog repo: `posts/sd01-eplan-on-a-stream-deck.md`, status draft, not committed there yet).
-- [ ] Before the post goes out: publish this repo, add screenshots in Wix, test import on a fresh account.
+- [x] Repo published; fresh-account test done.
+- [ ] Before the post goes out: add screenshots in Wix, update the post's tested line, set a release date.
 - [ ] Plan the first video (screen capture of the deck driving Eplan).
 - [ ] Keep post/video links in [`docs/blog-and-videos.md`](docs/blog-and-videos.md).
 

@@ -4,7 +4,7 @@ Every Eplan command used by the Stream Deck profile. A button simply sends a key
 
 Status: **Draft** = not yet individually checked; **Spot-checked** = used and working, not every button tested; **Verified** = run in Eplan 2026.0.3.
 
-Shortcut import file: tested on the maintainer's own account (Verified). The maintainer spot-checked the buttons after the import and they worked.
+Shortcut import file: tested on the maintainer's own account and on a fresh account (Verified). The maintainer spot-checked the buttons after the import and they worked.
 
 Action names come from matching the command ids in the exported shortcut file to the installed Eplan command table.
 

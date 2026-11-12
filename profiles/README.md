@@ -20,6 +20,8 @@
 3. Choose **Import...** and pick the `.streamDeckProfile` file.
 4. The new profile appears in the list. Click it, then use the profile drop-down under the device name to switch to it.
 
+![Stream Deck Preferences, Profiles tab, with Import in the menu below the list](../docs/images/streamdeck-import-profile.png)
+
 Either way, your existing profiles are not changed. Only the profile for the matching device (Stream Deck XL) will load.
 
 Then:
@@ -39,6 +41,6 @@ Then:
 | **Col 7** | Text Bottom Left | Text Bottom | Text Bottom Right | Update Reports |
 | **Col 8** | Switch Tabs | Copy Format | Paste Format | Update Connections |
 
-> Status: built from the maintainer's working setup, with generic icons. Import into a fresh Stream Deck install is still to be tested.
+> Status: built from the maintainer's working setup, with generic icons. Run on a fresh account, where it worked.
 
 Other Stream Deck sizes: not yet available (see [IDEAS.md](../IDEAS.md)).
