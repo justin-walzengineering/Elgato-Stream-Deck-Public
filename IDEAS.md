@@ -8,7 +8,7 @@ Replace the manual import (Settings > right-click **User** > Import > tick **Sho
 
 - Run it from a ribbon button or Extras > Run script; show a themed window: what will be imported, a **Back up my current shortcuts first** check box (default on), a file picker defaulting to `eplan/ShortcutKeys_StreamDeck.xml`, and an Import button with a clear success or failure message.
 - Uses Eplan's `XSettingsExport` / `XSettingsImport` actions. Probed in Eplan 2026.0.3: export takes `node`, `XMLFile`, `prj`; import takes `XmlFile`, `src`, `Project`, `Node`. The node `USER.SYSTEM.GUI.Shortcuts` exports exactly the shortcut keys. What `src` does is still unknown.
-- **Status: first version written** (`scripts/ImportShortcutKeys.cs`, compile-checked, not yet run in Eplan).
+- **Status: works** (`scripts/ImportShortcutKeys.cs`, run in Eplan 2026.0.3 on the maintainer's account: restored a changed shortcut and verified the result). Fresh-account test still pending.
 - Must handle: Cancel, missing file, file for a different Eplan version, and a clear note that shortcuts are replaced.
 - Match the GUI style of [Eplan-Scripting-GUI-Examples](https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples): light/dark theme, centered on Eplan, themed message window instead of `MessageBox`, C# 5 only.
 - Write it from scratch with generic data. Do not copy code from private or employer repos; only the concept travels.

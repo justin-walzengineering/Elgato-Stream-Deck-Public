@@ -10,7 +10,9 @@
 - [x] Create original icons (`tools/make_icons.py`, `icons/`).
 - [x] Export Eplan shortcuts and test the import (`eplan/ShortcutKeys_StreamDeck.xml`).
 - [x] Probe Eplan's settings actions (`scripts/ProbeSettingsActions.cs`, `ProbeSettingsExportNodes.cs`).
-- [ ] Test `scripts/ImportShortcutKeys.cs` in Eplan (change one shortcut first, run the script, confirm it is restored), then on a colleague's account.
+- [x] Test `scripts/ImportShortcutKeys.cs` in Eplan on the maintainer's account (works).
+- [ ] Test the import script and shortcut file on a colleague's account.
+- [ ] Add the import script to the docs (getting-started, screenshots) and a README for `scripts/`.
 
 ## Blog and video
 

@@ -23,6 +23,10 @@ Each Stream Deck button sends a keyboard shortcut. For a button to do anything, 
 
 Tested: Eplan Electric P8 2026.0.3, on the maintainer's own account. Testing on a fresh account is planned.
 
+### Or use the script
+
+`scripts/ImportShortcutKeys.cs` does the same in one click: run it from File > Extras > Interfaces > Run (under Scripts), pick the shortcut file, keep **Back up my current shortcuts first** ticked, and click Import. It checks the result afterwards. Tested on Eplan 2026.0.3 (maintainer's account).
+
 ## Part 2: Import the Stream Deck profile
 
 Coming soon (see [`../profiles/`](../profiles/)). Then: double-click the profile, and replace any placeholder paths.
