@@ -6,7 +6,7 @@
 - [x] Build the Eplan-only sanitized public profile (`profiles/`) and a private profile with personal buttons (`_local/private/`, git-ignored).
 - [ ] Import the public profile on a fresh Stream Deck setup / colleague's PC and confirm it loads.
 - [x] Review the backup for private data (see [`docs/sanitizing-checklist.md`](docs/sanitizing-checklist.md)).
-- [ ] **Page 2: macro-project editing page** (generate macros, etc.) for both profiles; replaces the copy of page 1, keeps only the previous-page button.
+- [ ] **Page 2: macro-project editing page** (requests go in `BUTTON-REQUESTS.md`) (generate macros, etc.) for both profiles; replaces the copy of page 1, keeps only the previous-page button.
 - [ ] **Add more Eplan commands to the Stream Deck**: work through Eplan actions and shortcuts together with Justin, set up buttons on the physical device, and record each in [`docs/shortcut-catalog.md`](docs/shortcut-catalog.md).
 - [ ] Write a README for each profile listing pages, buttons, and Eplan commands.
 - [x] Create original icons (`tools/make_icons.py`, `icons/`).
