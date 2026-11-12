@@ -1,13 +1,16 @@
 """Generate original Stream Deck button icons for the Eplan profile.
 
-Usage (from the repo root):  python tools/make_icons.py
+Usage (from the repo root):  python tools/make_icons.py            (public Eplan icons)
+                             python tools/make_icons.py --extras   (personal extras, written to _local/private/icons)
 Needs:  pip install pillow
 
 Every icon is drawn from scratch with simple shapes (no third-party artwork).
 Output: icons/<id>.png (144x144) and _local/icon_preview.png (contact sheet, git-ignored).
 Edit the BUTTONS list below to rename a button or change its glyph/colour.
 """
+import math
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 S = 4            # supersampling factor
@@ -158,6 +161,61 @@ def g_design(d, a, _):
     d.polygon([(46 * S, 54 * S), (46 * S, 76 * S), (68 * S, 76 * S)], outline=WHITE, width=5 * S)
 
 
+# ---------- extra glyphs for personal (non-Eplan) buttons ----------
+AUDIO, MUSIC, FUN, NAV = (110, 190, 255), (48, 215, 110), (255, 205, 64), (170, 176, 196)
+
+
+def g_headset(d, a, _):
+    d.arc([32 * S, 18 * S, 112 * S, 98 * S], 180, 360, fill=WHITE, width=7 * S)
+    rect(d, (26, 58, 48, 92), a, 6, fill=a, r=8)
+    rect(d, (96, 58, 118, 92), a, 6, fill=a, r=8)
+
+
+def g_monitor_audio(d, a, _):
+    rect(d, (24, 20, 120, 80), WHITE, 6, r=6)
+    line_w(d, [(72, 80), (72, 94)], WHITE, 6)
+    line_w(d, [(50, 94), (94, 94)], WHITE, 6)
+    d.polygon([(46 * S, 42 * S), (56 * S, 42 * S), (68 * S, 33 * S), (68 * S, 67 * S), (56 * S, 58 * S), (46 * S, 58 * S)], fill=a)
+    d.arc([60 * S, 36 * S, 88 * S, 64 * S], 300, 60, fill=a, width=5 * S)
+    d.arc([68 * S, 28 * S, 100 * S, 72 * S], 300, 60, fill=a, width=5 * S)
+
+
+def g_playpause(d, a, _):
+    d.polygon([(30 * S, 24 * S), (30 * S, 84 * S), (80 * S, 54 * S)], fill=a)
+    rect(d, (92, 26, 100, 82), WHITE, 4, fill=WHITE, r=3)
+    rect(d, (108, 26, 116, 82), WHITE, 4, fill=WHITE, r=3)
+
+
+def _rot(pts, cx, cy, deg):
+    r = math.radians(deg)
+    return [((cx + (x - cx) * math.cos(r) - (y - cy) * math.sin(r)) * S,
+             (cy + (x - cx) * math.sin(r) + (y - cy) * math.cos(r)) * S) for x, y in pts]
+
+
+def g_applause(d, a, _):
+    # two hands tilted toward each other, with burst lines above
+    palm = [(-13, -28), (13, -28), (13, 28), (-13, 28)]
+    for dx, deg, col in ((-16, 26, WHITE), (16, -26, a)):
+        d.polygon(_rot([(72 + dx + x, 70 + y) for x, y in palm], 72 + dx, 70, deg), fill=col)
+    for ang in (-50, -25, 0, 25, 50):
+        x0 = 72 + 44 * math.sin(math.radians(ang))
+        y0 = 40 - 20 * math.cos(math.radians(ang))
+        x1 = 72 + 58 * math.sin(math.radians(ang))
+        y1 = 40 - 32 * math.cos(math.radians(ang))
+        line_w(d, [(x0, y0), (x1, y1)], a, 5)
+
+
+def g_page(d, a, direction):
+    if direction == "next":
+        line_w(d, [(24, 50), (92, 50)], a, 8)
+        line_w(d, [(72, 28), (96, 50), (72, 72)], a, 8)
+        text(d, (112, 50), "2", WHITE, 40)
+    else:
+        line_w(d, [(52, 50), (120, 50)], a, 8)
+        line_w(d, [(72, 28), (48, 50), (72, 72)], a, 8)
+        text(d, (32, 50), "1", WHITE, 40)
+
+
 # id, caption, accent, glyph, argument
 BUTTONS = [
     ("grid-a", "Grid A", GRID, g_grid, "A"),
@@ -190,6 +248,16 @@ BUTTONS = [
     ("design", "Design", DESIGN, g_design, None),
 ]
 
+# Personal (non-Eplan) buttons: generated only with --extras, never into icons/.
+EXTRA_BUTTONS = [
+    ("audio-headset", "Headset", AUDIO, g_headset, None),
+    ("audio-monitor", "Monitor Audio", AUDIO, g_monitor_audio, None),
+    ("music-playpause", "Play / Pause", MUSIC, g_playpause, None),
+    ("applause", "Applause", FUN, g_applause, None),
+    ("page-next", "Next Page", NAV, g_page, "next"),
+    ("page-prev", "Previous Page", NAV, g_page, "prev"),
+]
+
 
 def make(bid, caption, accent, glyph, arg):
     im = Image.new("RGB", (N, N), BG)
@@ -208,18 +276,21 @@ def make(bid, caption, accent, glyph, arg):
 
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    out = os.path.join(root, "icons")
+    extras = "--extras" in sys.argv
+    buttons = EXTRA_BUTTONS if extras else BUTTONS
+    out = os.path.join(root, "_local", "private", "icons") if extras else os.path.join(root, "icons")
+    preview = os.path.join(root, "_local", "private" if extras else "", "icon_preview_extras.png" if extras else "icon_preview.png")
     os.makedirs(out, exist_ok=True)
-    os.makedirs(os.path.join(root, "_local"), exist_ok=True)
+    os.makedirs(os.path.dirname(preview), exist_ok=True)
     cols = 7
-    rows = (len(BUTTONS) + cols - 1) // cols
+    rows = (len(buttons) + cols - 1) // cols
     sheet = Image.new("RGB", (cols * 152 + 8, rows * 152 + 8), (60, 60, 60))
-    for i, b in enumerate(BUTTONS):
+    for i, b in enumerate(buttons):
         im = make(*b)
         im.save(os.path.join(out, b[0] + ".png"))
         sheet.paste(im, (8 + (i % cols) * 152, 8 + (i // cols) * 152))
-    sheet.save(os.path.join(root, "_local", "icon_preview.png"))
-    print("wrote", len(BUTTONS), "icons to", out)
+    sheet.save(preview)
+    print("wrote", len(buttons), "icons to", out)
 
 
 if __name__ == "__main__":

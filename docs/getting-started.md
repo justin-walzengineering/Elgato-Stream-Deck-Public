@@ -29,7 +29,7 @@ Tested: Eplan Electric P8 2026.0.3, on the maintainer's own account. Testing on 
 
 ## Part 2: Import the Stream Deck profile
 
-Double-click [`profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile`](../profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile). Stream Deck adds it as a new profile. See [`profiles/README.md`](../profiles/README.md) for the layout. No paths need editing: the buttons only send keyboard shortcuts.
+Double-click [`profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile`](../profiles/Eplan-Shortcuts-StreamDeck-XL.streamDeckProfile), or in the Stream Deck app open Preferences (gear icon) > Profiles > the arrow below the list > Import. Stream Deck adds it as a new profile. See [`profiles/README.md`](../profiles/README.md) for the layout. No paths need editing: the buttons only send keyboard shortcuts.
 
 ## Try it safely
 
