@@ -2,7 +2,7 @@
 
 Every Eplan command used by the Stream Deck profile. A button simply sends a keyboard shortcut, so **the shortcut must exist in Eplan first**. Import [`../eplan/ShortcutKeys_StreamDeck.xml`](../eplan/ShortcutKeys_StreamDeck.xml) (see [getting-started](getting-started.md)) or assign the keys yourself in Eplan.
 
-Status: **Draft** = not yet individually checked; **Spot-checked** = used and working, not every button tested; **Verified** = run in Eplan 2026.0.3.
+Status: **Draft** = not yet individually checked; **Spot-checked** = used and working, not every button tested; **Verified** = run in Eplan 2026.
 
 Shortcut import file: tested on the maintainer's own account and on a fresh account (Verified). The maintainer spot-checked the buttons after the import and they worked.
 
@@ -49,7 +49,7 @@ All nine use `XGedStartInteractionAction /Name:XGedIaFormatText /justification:N
 | Bottom | Ctrl+Alt+, | 8 |
 | Bottom Right | Ctrl+Alt+Z | 9 |
 
-**Verified** in Eplan 2026.0.3: all nine buttons place text at the anchor shown on their icon.
+**Verified** in Eplan 2026: all nine buttons place text at the anchor shown on their icon.
 
 ## Updating and navigation
 

@@ -4,7 +4,7 @@
 // You learn : Running Eplan's settings export/import actions, a themed window, backing up before a risky change, checking the result afterwards
 // Level     : Intermediate
 // Version   : 1.0.0
-// Tested in : Eplan Electric P8 2026.0.3 (maintainer's account and a fresh account)
+// Tested in : Eplan Electric P8 2026 (maintainer's account and a fresh account)
 // Author    : Justin Walz, Walz Engineering
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
