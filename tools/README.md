@@ -11,6 +11,28 @@ python tools/make_icons.py
 
 To rename a button or change its glyph or color, edit the `BUTTONS` list at the top of the script and run it again. Icons are 144 x 144 PNG files named after the button (`grid-a.png`, `to-front.png`, ...).
 
+## make_cheatsheet.py
+
+Draws the Eplan shortcut cheat sheet image ([`../docs/images/eplan-shortcut-cheat-sheet.png`](../docs/images/eplan-shortcut-cheat-sheet.png)) from scratch.
+
+```bash
+pip install pillow
+python tools/make_cheatsheet.py
+```
+
+Edit the `CARDS` list at the top to change a key, a label or a group, then run it again. It stops with an error if a label no longer fits its card.
+
+## make_keyboard_image.py
+
+Draws the keyboard version of the cheat sheet ([`../docs/images/eplan-shortcuts-keyboard.png`](../docs/images/eplan-shortcuts-keyboard.png)) from scratch: every key shows what it does, in two layers (key alone, and with Ctrl).
+
+```bash
+pip install pillow
+python tools/make_keyboard_image.py
+```
+
+Edit the `PLAIN` or `CTRL` lists at the top to change a label. It stops with an error if a label does not fit on its key.
+
 ## build_guide.py
 
 Builds the Word install and user guide for the release zip (`release-files/Install_and_User_Guide.docx`) from the screenshots in `docs/images` and the button tables in `docs/shortcut-catalog.md`.
@@ -24,7 +46,7 @@ Run it again whenever the setup steps, screenshots, catalog or `VERSION` change,
 
 ## probes/
 
-Two read-only Eplan scripts that were used to find out how Eplan's settings actions work. You do not need them to use the profile; they are kept as examples of exploring the scripting interface before building something. Both ran in Eplan 2026.0.3.
+Two read-only Eplan scripts that were used to find out how Eplan's settings actions work. You do not need them to use the profile; they are kept as examples of exploring the scripting interface before building something. Both ran in Eplan 2026.
 
 | Script | What it does |
 |--------|--------------|

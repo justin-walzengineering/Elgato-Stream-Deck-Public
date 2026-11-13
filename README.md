@@ -20,7 +20,7 @@ Eplan is a powerful platform with a command for nearly everything. A Stream Deck
 | [`icons/`](icons/) | Original button icons |
 | [`tools/`](tools/) | The script that draws the icons, and two small research scripts |
 | [`release.ps1`](release.ps1) | Builds the one-download zip package ([how](docs/releasing.md)) |
-| [`docs/`](docs/) | Setup guides and the catalog of Eplan commands |
+| [`docs/`](docs/) | Setup guides, the catalog of Eplan commands and the [shortcut cheat sheet](docs/eplan-shortcut-cheat-sheet.md) |
 | [`BUTTON-REQUESTS.md`](BUTTON-REQUESTS.md) | Request a new button |
 | [`IDEAS.md`](IDEAS.md) and [`TODO.md`](TODO.md) | What is planned next |
 

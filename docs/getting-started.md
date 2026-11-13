@@ -27,11 +27,11 @@ Each Stream Deck button sends a keyboard shortcut. For a button to do anything, 
 
 > The import **replaces your whole shortcut set** with the one in the file. The backup in step 1 lets you restore yours with the same steps.
 
-Tested: Eplan Electric P8 2026.0.3, on the maintainer's own account and on a fresh account.
+Tested: Eplan Electric P8 2026, on the maintainer's own account and on a fresh account.
 
 ### Or use the script
 
-`scripts/ImportShortcutKeys.cs` does the same in one click: run it from File > Extras > Interfaces > Run (under Scripts), pick the shortcut file, keep **Back up my current shortcuts first** ticked, and click Import. It checks the result afterwards. Tested on Eplan 2026.0.3 (maintainer's account and a fresh account).
+`scripts/ImportShortcutKeys.cs` does the same in one click: run it from File > Extras > Interfaces > Run (under Scripts), pick the shortcut file, keep **Back up my current shortcuts first** ticked, and click Import. It checks the result afterwards. Tested on Eplan 2026 (maintainer's account and a fresh account).
 
 ## Part 2: Import the Stream Deck profile
 

@@ -11,7 +11,7 @@ New to running scripts? See [How to run a script](https://github.com/justin-walz
 | **File** | [`ImportShortcutKeys.cs`](ImportShortcutKeys.cs) |
 | **Version** | 1.0.0 |
 | **Level** | Intermediate |
-| **Status** | Works. Run in Eplan 2026.0.3 on the maintainer's account and on a fresh account. |
+| **Status** | Works. Run in Eplan 2026 on the maintainer's account and on a fresh account. |
 
 Imports a shortcut-keys XML file (for example [`../eplan/ShortcutKeys_StreamDeck.xml`](../eplan/ShortcutKeys_StreamDeck.xml)) into Eplan in one click, so the Stream Deck buttons have the shortcuts they send.
 

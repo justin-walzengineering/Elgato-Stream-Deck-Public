@@ -7,8 +7,8 @@ A running list. Add to it freely; move items to `TODO.md` when they are schedule
 Replace the manual import (Settings > right-click **User** > Import > tick **Shortcut keys** > pick file) with a small Eplan script.
 
 - Run it from a ribbon button or Extras > Run script; show a themed window: what will be imported, a **Back up my current shortcuts first** check box (default on), a file picker defaulting to `eplan/ShortcutKeys_StreamDeck.xml`, and an Import button with a clear success or failure message.
-- Uses Eplan's `XSettingsExport` / `XSettingsImport` actions. Probed in Eplan 2026.0.3: export takes `node`, `XMLFile`, `prj`; import takes `XmlFile`, `src`, `Project`, `Node`. The node `USER.SYSTEM.GUI.Shortcuts` exports exactly the shortcut keys. What `src` does is still unknown.
-- **Status: works** (`scripts/ImportShortcutKeys.cs`, run in Eplan 2026.0.3 on the maintainer's account: restored a changed shortcut and verified the result). Also run on a fresh account.
+- Uses Eplan's `XSettingsExport` / `XSettingsImport` actions. Probed in Eplan 2026: export takes `node`, `XMLFile`, `prj`; import takes `XmlFile`, `src`, `Project`, `Node`. The node `USER.SYSTEM.GUI.Shortcuts` exports exactly the shortcut keys. What `src` does is still unknown.
+- **Status: works** (`scripts/ImportShortcutKeys.cs`, run in Eplan 2026 on the maintainer's account: restored a changed shortcut and verified the result). Also run on a fresh account.
 - Must handle: Cancel, missing file, file for a different Eplan version, and a clear note that shortcuts are replaced.
 - Match the GUI style of [Eplan-Scripting-GUI-Examples](https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples): light/dark theme, centered on Eplan, themed message window instead of `MessageBox`, C# 5 only.
 - Write it from scratch with generic data. Do not copy code from private or employer repos; only the concept travels.
@@ -17,12 +17,15 @@ Replace the manual import (Settings > right-click **User** > Import > tick **Sho
 ## Testing
 
 - [x] Import on a colleague's (clean) Eplan user account: worked (2026-11-12). Per-button checks there are still open.
-- [ ] Confirm the Eplan version the import file works on (built from 2026.0.3).
+- [ ] Confirm the Eplan version the import file works on (built from 2026).
 - [ ] Re-test after each Eplan update.
+- [ ] **Decide what to do about the `Ctrl+Alt` overlap (nothing changed yet).** Eplan's published default list (checked 2026-11-13) uses `Ctrl+Alt+A` (Edit workspace), `D` (3D bottom), `L` (3D left) and `B` (3D back). `eplan/ShortcutKeys_StreamDeck.xml` assigns those four keys to other commands (Properties, Parts management, construction mode for the Design button, Function data). Options: leave everything as is and keep those four keys off the images (current state), or move the profile's Design button to a free key. Pressing the keys in a fresh Eplan account shows what really happens there. The 3D view keys `T`, `F`, `R` and `1` to `4` agree in both places.
 
 ## Profile and buttons
 
 - [ ] Add the shortcuts from the catalog's "Ideas queue" as new buttons.
+- [ ] **Panel layout (3D) page.** One page of 3D view buttons: top, front and right views, the four isometric corners, home view (go to / set), and rotate view 90 degrees left and right (the `Ctrl+Alt+T/F/R`, `1`-`4`, `5`, `8`, `7`, `9` keys in the shortcut file). Add the placement keys that already work in 3D (`A`, `H`, `J`, `Ctrl+W`, `Ctrl+Shift+R`) and zoom window (`Z`) / whole view (`Alt+3`). Needs icons for each view, and the `Ctrl+Alt` overlap above settled first (bottom, left and back views depend on it).
+- [x] Cheat sheet and keyboard images now show the 3D views whose keys agree (`T`, `F`, `R`, `1` to `4`). Add bottom, left and back once the overlap is settled.
 - [ ] Name Grid A to D after what they actually do (grid sizes).
 - [ ] Use the free first column for page navigation and new Eplan commands.
 - [ ] Profile variants for different Stream Deck sizes (15-key, 32-key).
