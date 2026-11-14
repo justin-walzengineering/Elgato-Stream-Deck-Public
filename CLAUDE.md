@@ -17,7 +17,7 @@ A free, public collection of **original** Elgato Stream Deck profiles, icons and
 7. **Low-key branding.** A short "Maintained by Justin Walz, Walz Engineering" footer with one line inviting contact about custom work, plus file headers where relevant. No other sales pitches.
 8. **English only.**
 9. **Never `git push`, create remotes, or publish** without Justin's explicit OK in that conversation.
-10. **Blog is separate.** The `blog/` folder is a separate PRIVATE repo and is git-ignored. Never commit it here.
+10. **Blog is separate.** The blog is a separate PRIVATE repo (Eplan-Blog-Private, a sibling folder next to this one). Never copy it into this repo or commit it here.
 
 ## Releases
 
