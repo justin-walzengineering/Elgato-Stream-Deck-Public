@@ -43,4 +43,4 @@ Then:
 
 > Status: built from the maintainer's working setup, with generic icons. Run on a fresh account, where it worked.
 
-Other Stream Deck sizes: not yet available (see [IDEAS.md](../IDEAS.md)).
+Other Stream Deck sizes: not yet available.

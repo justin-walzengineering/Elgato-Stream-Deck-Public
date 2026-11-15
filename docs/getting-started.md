@@ -43,4 +43,4 @@ Test buttons on a copy of a project first, especially any marked as changing pro
 
 ## Future
 
-A one-click import script is planned; see [`../IDEAS.md`](../IDEAS.md).
+A one-click import script is planned.

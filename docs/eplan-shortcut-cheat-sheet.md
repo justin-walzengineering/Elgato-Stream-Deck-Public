@@ -42,6 +42,6 @@ To put a key on a button, follow [getting-started](getting-started.md); the prof
 
 ## Notes
 
-- The sheet shows the Ctrl+Alt 3D view keys that are the same in Eplan's default list and in our shortcut file: top (`T`), front (`F`), right (`R`) and the four isometric views (`1` to `4`). Eplan's list also has bottom (`D`), left (`L`), back (`B`) and Edit workspace (`A`) on `Ctrl+Alt`, but the shortcut file the Stream Deck profile imports uses those four keys for other buttons (for example Design on `Ctrl+Alt+L`). Both cannot hold the same key, so they are left off the sheet until that is sorted out; see [IDEAS](../IDEAS.md).
+- The sheet shows the Ctrl+Alt 3D view keys that are the same in Eplan's default list and in our shortcut file: top (`T`), front (`F`), right (`R`) and the four isometric views (`1` to `4`). Eplan's list also has bottom (`D`), left (`L`), back (`B`) and Edit workspace (`A`) on `Ctrl+Alt`, but the shortcut file the Stream Deck profile imports uses those four keys for other buttons (for example Design on `Ctrl+Alt+L`). Both cannot hold the same key, so they are left off the sheet until that is sorted out.
 - The profile's own buttons use extra `Ctrl+Alt` and `Ctrl+Shift+Alt` keys, documented in the [shortcut catalog](shortcut-catalog.md).
 - The sheet also leaves out a few keys that are less useful on a button, such as the Home, End and arrow-key jumps, the Ctrl+F4 / F6 / F7 / F12 window switching and Ctrl+F1 (ribbon). The keyboard image shows some of them.
