@@ -33,6 +33,17 @@ python tools/make_keyboard_image.py
 
 Edit the `PLAIN` or `CTRL` lists at the top to change a label. It stops with an error if a label does not fit on its key.
 
+## build_pdf.py
+
+Builds the printable PDF ([`../docs/Eplan-Shortcuts-Printable.pdf`](../docs/Eplan-Shortcuts-Printable.pdf)): the cheat sheet on a landscape Letter page and the keyboard map on a portrait one, both in a light theme.
+
+```bash
+pip install pymupdf pillow
+python tools/make_cheatsheet.py --print
+python tools/make_keyboard_image.py --print
+python tools/build_pdf.py
+```
+
 ## build_guide.py
 
 Builds the Word install and user guide for the release zip (`release-files/Install_and_User_Guide.docx`) from the screenshots in `docs/images` and the button tables in `docs/shortcut-catalog.md`.

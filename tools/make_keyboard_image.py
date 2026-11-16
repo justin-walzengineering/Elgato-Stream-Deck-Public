@@ -4,6 +4,7 @@ Usage (from the repo root):  python tools/make_keyboard_image.py
 Needs:  pip install pillow
 
 Output: docs/images/eplan-shortcuts-keyboard.png
+Add --print for a light, ink-friendly version: docs/images/eplan-shortcuts-keyboard-print.png
 Two keyboards: keys pressed on their own (with the Shift / Alt versions in small print),
 and keys pressed with Ctrl (with the Ctrl+Shift versions in small print).
 Edit PLAIN or CTRL below to change a label, then run it again.
@@ -11,15 +12,20 @@ The script stops with an error if a label does not fit on its key.
 All artwork is original (simple shapes and text only).
 """
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 W = 2400
 MARGIN = 60
-BG = (20, 24, 32)
-KEY = (34, 40, 52)
-KEY_DIM_TXT = (92, 102, 120)
-WHITE = (240, 244, 250)
-SOFT = (170, 180, 198)
+PRINT = "--print" in sys.argv
+if PRINT:   # light theme for paper
+    BG, KEY, KEY_DIM_TXT = (255, 255, 255), (255, 255, 255), (150, 156, 168)
+    WHITE, SOFT = (20, 24, 32), (80, 88, 104)
+    EMPTY_FILL, EMPTY_LINE, RULE, MOD_FILL, MOD_TXT = (246, 247, 250), (205, 210, 220), (190, 196, 208), (30, 34, 44), (255, 255, 255)
+else:
+    BG, KEY, KEY_DIM_TXT = (20, 24, 32), (34, 40, 52), (92, 102, 120)
+    WHITE, SOFT = (240, 244, 250), (170, 180, 198)
+    EMPTY_FILL, EMPTY_LINE, RULE, MOD_FILL, MOD_TXT = (28, 33, 44), (44, 52, 68), (52, 60, 78), (250, 250, 250), (20, 24, 32)
 
 DRAW, SYM, CONN, EDIT, VIEW, PAGES, SEARCH, REP, EVERY, PANEL = (
     (79, 156, 255), (176, 132, 255), (72, 207, 140), (64, 214, 214),
@@ -182,7 +188,14 @@ BOARD_H = int(6.35 * U) + 10
 
 
 def tint(c, k=0.26):
+    if PRINT:
+        k = 0.30
     return tuple(int(c[i] * k + KEY[i] * (1 - k)) for i in range(3))
+
+
+def ink(c):
+    """Colour for key-name text: the accent itself on dark, a darker shade on paper."""
+    return tuple(int(v * 0.55) for v in c) if PRINT else c
 
 
 PROBLEMS = []
@@ -210,16 +223,16 @@ def draw_board(d, x0, y0, data, mod_keys=(), rows=None):
         info = data.get(key)
         mod = key.strip() in mod_keys
         if mod:
-            d.rounded_rectangle([x, y, x + w, y + h], radius=12, fill=(250, 250, 250), outline=WHITE, width=3)
-            d.text((x + w / 2, y + h / 2), key.strip(), font=font("segoeuib.ttf", 26), fill=(20, 24, 32), anchor="mm")
+            d.rounded_rectangle([x, y, x + w, y + h], radius=12, fill=MOD_FILL, outline=WHITE, width=3)
+            d.text((x + w / 2, y + h / 2), key.strip(), font=font("segoeuib.ttf", 26), fill=MOD_TXT, anchor="mm")
             continue
         if not info:
-            d.rounded_rectangle([x, y, x + w, y + h], radius=12, fill=(28, 33, 44), outline=(44, 52, 68), width=2)
+            d.rounded_rectangle([x, y, x + w, y + h], radius=12, fill=EMPTY_FILL, outline=EMPTY_LINE, width=2)
             d.text((x + 10, y + 7), show_label(key), font=F_CAP, fill=KEY_DIM_TXT)
             continue
         main, cat, fine = info
         d.rounded_rectangle([x, y, x + w, y + h], radius=12, fill=tint(cat), outline=cat, width=3)
-        d.text((x + 10, y + 7), show_label(key), font=F_CAP, fill=cat)
+        d.text((x + 10, y + 7), show_label(key), font=F_CAP, fill=ink(cat))
         max_w = w - 14
         if main:
             fm = F_MAIN
@@ -275,14 +288,14 @@ def main():
         y += (BOARD_H if rows is None else int(3.4 * U) + 10) + 110
 
     fy = H - 112
-    d.line([(MARGIN, fy), (W - MARGIN, fy)], fill=(52, 60, 78), width=2)
+    d.line([(MARGIN, fy), (W - MARGIN, fy)], fill=RULE, width=2)
     d.text((MARGIN, fy + 24), "Shortcut keys can be customized in Eplan, so yours may differ. Check a key on a copy of a project first.", font=F_SMALL, fill=SOFT)
     d.text((MARGIN, fy + 60), "Unofficial community guide by Walz Engineering. Not affiliated with or endorsed by EPLAN.", font=F_SMALL, fill=SOFT)
     d.text((W - MARGIN, fy + 60), "github.com/justin-walzengineering/Elgato-Stream-Deck-Public", font=F_SMALL, fill=SOFT, anchor="ra")
 
     if PROBLEMS:
         raise SystemExit("Too wide on key: " + "; ".join(PROBLEMS))
-    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "images", "eplan-shortcuts-keyboard.png")
+    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "images", "eplan-shortcuts-keyboard-print.png" if PRINT else "eplan-shortcuts-keyboard.png")
     img.save(out, optimize=True)
     print("wrote", out, img.size)
 

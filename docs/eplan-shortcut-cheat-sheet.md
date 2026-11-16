@@ -16,6 +16,10 @@ Prefer to see where each key sits? This version puts the labels right on the key
 
 It is drawn by [`tools/make_keyboard_image.py`](../tools/make_keyboard_image.py); edit the `PLAIN` or `CTRL` lists there to change a label.
 
+## Print it
+
+[Download the printable PDF](Eplan-Shortcuts-Printable.pdf): two US Letter pages with a light background so it prints without much ink. Page 1 is the cheat sheet (landscape), page 2 is the keyboard map (portrait). The PDF is built by [`tools/build_pdf.py`](../tools/build_pdf.py) from the light versions of the two images (`python tools/make_cheatsheet.py --print` and `python tools/make_keyboard_image.py --print`, then `python tools/build_pdf.py`).
+
 ## Why this belongs in a Stream Deck repo
 
 A Stream Deck button simply sends a keyboard shortcut, so every key on this sheet is a candidate button. The stars on the image mark the ones that make the best buttons: short actions you repeat all day, or toggles you want one press away.

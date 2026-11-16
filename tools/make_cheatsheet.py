@@ -5,22 +5,29 @@ Needs:  pip install pillow
 
 Output: docs/images/eplan-shortcut-cheat-sheet.png
 Edit the CARDS list to change a key, a description or a group, then run it again.
+Add --print for a light, ink-friendly version: eplan-shortcut-cheat-sheet-print.png
 The same keys are explained in docs/eplan-shortcut-cheat-sheet.md.
 All artwork is original (simple shapes and text only).
 """
 import math
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 W = 2400
 MARGIN, GAP = 60, 30
 COLS = 4
-BG = (20, 24, 32)
-CARD = (30, 36, 48)
-CHIP = (44, 52, 68)
-WHITE = (240, 244, 250)
-SOFT = (170, 180, 198)
-STAR = (255, 214, 79)
+PRINT = "--print" in sys.argv
+if PRINT:   # light theme for paper
+    BG, CARD, CHIP = (255, 255, 255), (246, 247, 250), (255, 255, 255)
+    WHITE, SOFT, RULE = (20, 24, 32), (80, 88, 104), (190, 196, 208)
+    STAR = (235, 160, 0)
+    HEAD_MIX = 0.40
+else:
+    BG, CARD, CHIP = (20, 24, 32), (30, 36, 48), (44, 52, 68)
+    WHITE, SOFT, RULE = (240, 244, 250), (170, 180, 198), (52, 60, 78)
+    STAR = (255, 214, 79)
+    HEAD_MIX = 0.28
 
 BLUE, GREEN, PURPLE, ORANGE, TEAL, PINK, YELLOW = (
     (79, 156, 255), (72, 207, 140), (176, 132, 255), (255, 170, 64),
@@ -153,8 +160,8 @@ def main():
         for title, acc, rows in col:
             h = card_height(rows)
             d.rounded_rectangle([x0, y, x0 + COL_W, y + h], radius=18, fill=CARD)
-            d.rounded_rectangle([x0, y, x0 + COL_W, y + HEAD_H], radius=18, fill=tuple(int(c * 0.28 + CARD[i] * 0.72) for i, c in enumerate(acc)))
-            d.rectangle([x0, y + HEAD_H - 18, x0 + COL_W, y + HEAD_H], fill=tuple(int(c * 0.28 + CARD[i] * 0.72) for i, c in enumerate(acc)))
+            d.rounded_rectangle([x0, y, x0 + COL_W, y + HEAD_H], radius=18, fill=tuple(int(c * HEAD_MIX + CARD[i] * (1 - HEAD_MIX)) for i, c in enumerate(acc)))
+            d.rectangle([x0, y + HEAD_H - 18, x0 + COL_W, y + HEAD_H], fill=tuple(int(c * HEAD_MIX + CARD[i] * (1 - HEAD_MIX)) for i, c in enumerate(acc)))
             d.rounded_rectangle([x0, y, x0 + 9, y + h], radius=4, fill=acc)
             d.text((x0 + 30, y + HEAD_H // 2), title, font=F_HEAD, fill=WHITE, anchor="lm")
             key_w = max(chip_row_width(d, r[0]) for r in rows)
@@ -178,12 +185,12 @@ def main():
             y += h + CARD_GAP
 
     fy = H - 112
-    d.line([(MARGIN, fy), (W - MARGIN, fy)], fill=(52, 60, 78), width=2)
+    d.line([(MARGIN, fy), (W - MARGIN, fy)], fill=RULE, width=2)
     d.text((MARGIN, fy + 24), "Shortcut keys can be customized in Eplan, so yours may differ. Check a key on a copy of a project first.", font=F_SMALL, fill=SOFT)
     d.text((MARGIN, fy + 60), "Unofficial community guide by Walz Engineering. Not affiliated with or endorsed by EPLAN.", font=F_SMALL, fill=SOFT)
     d.text((W - MARGIN, fy + 60), "github.com/justin-walzengineering/Elgato-Stream-Deck-Public", font=F_SMALL, fill=SOFT, anchor="ra")
 
-    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "images", "eplan-shortcut-cheat-sheet.png")
+    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "images", "eplan-shortcut-cheat-sheet-print.png" if PRINT else "eplan-shortcut-cheat-sheet.png")
     img.save(out, optimize=True)
     print("wrote", out, img.size)
 
